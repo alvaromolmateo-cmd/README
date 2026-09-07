@@ -1,5 +1,7 @@
 (() => {
   const root = document.documentElement;
+  root.classList.add("js");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const navbar = document.getElementById('navbar');
   const progressBar = document.getElementById('progressBar');
   const themeToggle = document.getElementById('themeToggle');
@@ -11,20 +13,32 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Theme toggle
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) root.setAttribute('data-theme', savedTheme);
-
+  const updateThemeLabel = () => themeToggle?.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Activar modo día' : 'Activar modo noche');
+  try {
+    const savedTheme = localStorage.getItem('theme');
+    if (['light', 'dark'].includes(savedTheme)) root.dataset.theme = savedTheme;
+  } catch { /* The site remains usable when storage is unavailable. */ }
+  updateThemeLabel();
   themeToggle?.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', current);
-    localStorage.setItem('theme', current);
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch { /* Optional preference. */ }
+    updateThemeLabel();
   });
 
-  // Mobile nav
-  menuToggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks?.querySelectorAll('a').forEach(link =>
-    link.addEventListener('click', () => navLinks.classList.remove('open'))
-  );
+  // Mobile navigation: keep its accessible state in sync.
+  const setMenu = open => {
+    navLinks?.classList.toggle('open', open);
+    menuToggle?.setAttribute('aria-expanded', String(open));
+    menuToggle?.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    if (navLinks) navLinks.inert = window.matchMedia('(max-width: 900px)').matches && !open;
+  };
+  setMenu(false);
+  menuToggle?.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+  navLinks?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navLinks?.classList.contains('open')) { setMenu(false); menuToggle?.focus(); }
+  });
+  window.matchMedia('(max-width: 900px)').addEventListener('change', () => setMenu(false));
 
   // Scroll-driven: progress bar + navbar shrink + back-to-top
   const onScroll = () => {
@@ -39,7 +53,7 @@
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'instant' : 'smooth' }));
 
   // Reveal on scroll
   const revealItems = document.querySelectorAll('.reveal');
@@ -66,27 +80,6 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach(section => spyObserver.observe(section));
 
-  // Animated stat counters
-  document.querySelectorAll('.stat-number').forEach(counter => {
-    const target = parseInt(counter.dataset.count, 10);
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const duration = 1400;
-        const start = performance.now();
-        const step = (now) => {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          counter.textContent = Math.round(eased * target);
-          if (progress < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-        counterObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.5 });
-    counterObserver.observe(counter);
-  });
-
   // Animated language bars
   document.querySelectorAll('.language-fill').forEach(bar => {
     const barObserver = new IntersectionObserver((entries) => {
@@ -102,12 +95,12 @@
 
   // Typing effect
   const roles = [
-    'Desarrollador Web en formación',
-    'Estudiante de Grado Superior DAW',
-    'Futuro Full-Stack Developer'
+    'Soy desarrollador web en formación',
+    'Estudio Desarrollo de Aplicaciones Web',
+    'Quiero crecer como desarrollador full-stack'
   ];
   const typedRole = document.getElementById('typedRole');
-  if (typedRole) {
+  if (typedRole && !reducedMotion) {
     let roleIndex = 0, charIndex = 0, deleting = false;
 
     const tick = () => {

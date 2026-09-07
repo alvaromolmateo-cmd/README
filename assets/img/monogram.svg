@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="none">
+<title>ÁM · Álvaro Molina Mateo</title>
+<defs><linearGradient id="bg" x2="320" y2="320" gradientUnits="userSpaceOnUse"><stop stop-color="#a21b31"/><stop offset="1" stop-color="#3c0a15"/></linearGradient></defs>
+<rect width="320" height="320" rx="32" fill="url(#bg)"/>
+<rect x="16" y="16" width="288" height="288" rx="23" stroke="#ef9cab" stroke-opacity=".3"/>
+<circle cx="270" cy="45" r="125" stroke="#ef9cab" stroke-opacity=".1"/>
+<circle cx="270" cy="45" r="95" stroke="#ef9cab" stroke-opacity=".1"/>
+<!-- La tilde de Á está trazada explícitamente y no depende de una fuente. -->
+<path d="M51 208 98 108 145 208M68 173h60M174 208V108l43 64 43-64v100" stroke="#fff4f5" stroke-width="12" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="m95 86 17-23" stroke="#ffc1c9" stroke-width="10" stroke-linecap="square"/>
+<path d="M53 245h175" stroke="#bd5266" stroke-width="2"/>
+<circle cx="259" cy="245" r="6" fill="#f59eab"/>
+</svg>

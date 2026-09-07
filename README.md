@@ -1,44 +1,52 @@
-# CV Álvaro Molina Mateo
+﻿# Hola, soy Álvaro Molina Mateo
 
-Web personal tipo CV/portfolio para Álvaro Molina Mateo, estudiante del Grado Superior de
-Desarrollo de Aplicaciones Web. Presenta formación, experiencia laboral y habilidades en un
-formato de una sola página con animaciones al hacer scroll.
+Este es mi CV en formato web. Estoy estudiando Desarrollo de Aplicaciones Web en el IES Severo Ochoa y aquí comparto quién soy, mi formación, una selección de mi experiencia laboral y las tecnologías con las que trabajo.
 
-## Características
+He planteado este proyecto como una presentación personal sencilla de explorar desde el móvil o el ordenador, con una identidad visual en rojo sangre y un monograma **ÁM** diseñado en SVG.
 
-- Diseño de una sola página con navegación por anclas y resaltado activo (scrollspy)
-- Modo claro / oscuro con persistencia en `localStorage`
-- Animaciones de aparición al hacer scroll (`IntersectionObserver`)
-- Contadores animados y barras de progreso de idiomas
-- Timeline de experiencia y formación
-- Formulario de contacto que abre el cliente de correo con el mensaje ya redactado
-- Totalmente responsive (móvil, tablet, escritorio)
-- Botón de descarga del CV en PDF
+## Qué puedes encontrar
 
-## Tecnologías
+- Mi presentación y accesos directos a formación, experiencia, tecnologías e idiomas.
+- Una sección sobre mí escrita en primera persona, con mis datos de contacto debajo.
+- Mi experiencia más relevante y mi formación, diferenciando los estudios en curso de los finalizados.
+- Mis habilidades con HTML, CSS, WordPress y WooCommerce, Java, Python y Git.
+- Mis idiomas, aptitudes y un enlace para descargar mi CV en PDF.
+- Un formulario que prepara un correo para enviármelo desde tu aplicación de email. No envía mensajes por sí solo ni guarda datos en un servidor.
 
-HTML5, CSS3 (variables, grid, animaciones) y JavaScript vanilla. Sin frameworks ni dependencias
-de build — se sirve directamente como sitio estático.
+## Cómo está hecha
 
-## Estructura
+Uso **HTML, CSS y JavaScript**, sin frameworks ni un proceso de compilación. La web incluye modo día y noche, recuerda el tema cuando el navegador permite almacenamiento local y adapta su distribución al tamaño de la pantalla.
 
-```
-index.html
+También incluye navegación por secciones, indicador de lectura, animaciones suaves y un botón para volver arriba. He añadido foco visible para navegar con teclado, un acceso para saltar al contenido y compatibilidad con la preferencia de movimiento reducido.
+
+## Estructura del proyecto
+
+```text
+index.html                         # Contenido de mi CV
 assets/
-  css/style.css
-  js/main.js
-  img/profile.png
-  cv/CV-Alvaro-Molina-Mateo.pdf
+  css/style.css                    # Diseño, temas y adaptación a pantallas
+  js/main.js                       # Navegación, tema y formulario
+  img/monogram.svg                  # Mi identidad visual ÁM y favicon
+  img/profile.png                   # Imagen original conservada
+  cv/CV-Alvaro-Molina-Mateo.pdf      # Mi CV descargable
 ```
 
-## Ejecutar en local
+## Verlo en local
+
+Desde la carpeta del proyecto ejecuto:
 
 ```bash
 python -m http.server 8000
 ```
 
-Y abrir `http://localhost:8000`.
+Después abro [localhost:8000](http://localhost:8000). También puedo abrir `index.html` directamente para revisar el contenido.
 
-## Despliegue
+## Publicación y mantenimiento
 
-Pensado para desplegarse con GitHub Pages directamente desde la rama `main`.
+El proyecto está preparado para GitHub Pages sirviendo la raíz de la rama `main`. Mantengo el contenido en `index.html`, los colores en las variables de `assets/css/style.css` y las interacciones en `assets/js/main.js`.
+
+El PDF es un archivo independiente: los cambios en la web no modifican automáticamente su contenido.
+
+## Contacto
+
+Puedes escribirme a [alvaromolmateo@gmail.com](mailto:alvaromolmateo@gmail.com) o visitar [mi perfil de GitHub](https://github.com/alvaromolmateo-cmd).
