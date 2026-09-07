@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Álvaro Molina Mateo · Desarrollador Web</title>
+<meta name="description" content="Portfolio y CV interactivo de Álvaro Molina Mateo, estudiante de Desarrollo de Aplicaciones Web. Formación, experiencia y habilidades.">
+<meta property="og:title" content="Álvaro Molina Mateo · Desarrollador Web">
+<meta property="og:description" content="Portfolio y CV interactivo de Álvaro Molina Mateo, estudiante de Desarrollo de Aplicaciones Web.">
+<meta property="og:image" content="assets/img/profile.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%236366f1'>A</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo">AM<span>.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active" data-link>Inicio</a>
+      <a href="#about" class="nav-link" data-link>Sobre mí</a>
+      <a href="#experience" class="nav-link" data-link>Experiencia</a>
+      <a href="#education" class="nav-link" data-link>Formación</a>
+      <a href="#skills" class="nav-link" data-link>Habilidades</a>
+      <a href="#contact" class="nav-link" data-link>Contacto</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="assets/cv/CV-Alvaro-Molina-Mateo.pdf" download class="btn btn-primary btn-sm">Descargar CV</a>
+      <button class="icon-btn nav-burger" id="menuToggle" aria-label="Abrir menú">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="home" class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="hero-inner container">
+      <div class="hero-content">
+        <p class="eyebrow reveal">Hola, soy</p>
+        <h1 class="hero-name reveal">Álvaro Molina<br>Mateo</h1>
+        <h2 class="hero-role reveal"><span id="typedRole"></span><span class="type-cursor">&nbsp;</span></h2>
+        <p class="hero-text reveal">
+          Mi objetivo es adquirir experiencia laboral que me permita desarrollarme profesionalmente,
+          mejorar mis habilidades y aprender a trabajar de forma eficiente en equipo.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#contact" class="btn btn-primary">Hablemos</a>
+          <a href="#experience" class="btn btn-outline">Ver experiencia</a>
+        </div>
+        <ul class="hero-meta reveal">
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Elche / Alicante
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <a href="mailto:alvaromolmateo@gmail.com">alvaromolmateo@gmail.com</a>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            644 62 88 12
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="photo-frame">
+          <img src="assets/img/profile.png" alt="Foto de Álvaro Molina Mateo" width="280" height="280">
+        </div>
+        <div class="float-card float-card-1">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <div><strong>Grado Superior</strong><span>DAW · 2º curso</span></div>
+        </div>
+        <div class="float-card float-card-2">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18a4 4 0 0 0-8 0"/><circle cx="12" cy="11" r="3"/><path d="M20.2 20.2a9 9 0 1 0-16.4 0"/></svg>
+          <div><strong>NTT DATA</strong><span>Prácticas 2025</span></div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#stats" class="scroll-cue" aria-label="Bajar a la siguiente sección">
+      <span></span>
+    </a>
+  </section>
+
+  <section id="stats" class="stats">
+    <div class="container stats-grid">
+      <div class="stat-card reveal">
+        <span class="stat-number" data-count="2">0</span>
+        <p>Formación técnica en curso</p>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number" data-count="3">0</span>
+        <p>Experiencias laborales</p>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number" data-count="6">0</span>
+        <p>Tecnologías y herramientas</p>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number" data-count="2">0</span>
+        <p>Idiomas hablados</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <p class="section-eyebrow reveal">Sobre mí</p>
+      <h2 class="section-title reveal">Estudiante de Desarrollo de Aplicaciones Web</h2>
+
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <blockquote>
+            "Persona constante, disciplinada y comprometida. Actualmente en formación en el
+            Grado Superior de Desarrollo de Aplicaciones Web en el IES Severo Ochoa."
+          </blockquote>
+        </div>
+
+        <div class="about-info reveal">
+          <p>
+            Compaginé el Grado Medio de Sistemas Microinformáticos y Redes con la entrada al
+            Grado Superior de Desarrollo de Aplicaciones Web, donde curso actualmente el 2º año.
+            Realicé mis prácticas en <strong>NTT DATA</strong>, donde aprendí metodologías ágiles,
+            control de versiones con Git y buenas prácticas de programación en proyectos reales.
+            También cuento con experiencia en atención al cliente, trabajo en equipo y resolución
+            de incidencias gracias a mis puestos en Burger King y Carrefour.
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <span class="info-label">Localidad</span>
+              <span class="info-value">Elche / Alicante</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Idiomas</span>
+              <span class="info-value">Castellano (nativo) · Inglés (B2)</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Email</span>
+              <span class="info-value"><a href="mailto:alvaromolmateo@gmail.com">alvaromolmateo@gmail.com</a></span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Teléfono</span>
+              <span class="info-value">644 62 88 12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section alt-bg">
+    <div class="container">
+      <p class="section-eyebrow reveal">Trayectoria</p>
+      <h2 class="section-title reveal">Experiencia laboral</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Marzo 2025 — Mayo 2025</span>
+            <h3>Prácticas de formación</h3>
+            <span class="timeline-org">NTT DATA</span>
+            <p>
+              Formación técnica orientada a la incorporación en proyectos de desarrollo de software.
+              Aprendizaje de metodologías ágiles, herramientas de desarrollo, control de versiones con
+              Git, buenas prácticas de programación y trabajo en equipo, preparando la participación
+              en proyectos reales.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Metodologías ágiles</span>
+              <span class="tag">Git</span>
+              <span class="tag">Trabajo en equipo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Junio 2026 — Julio 2026</span>
+            <h3>Atención al cliente</h3>
+            <span class="timeline-org">Burger King</span>
+            <p>
+              Atención al cliente, preparación y montaje de pedidos, manejo de caja y cobro,
+              reposición de productos, mantenimiento de la limpieza y el orden del establecimiento,
+              y trabajo en equipo para garantizar un servicio rápido y de calidad.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Atención al cliente</span>
+              <span class="tag">Trabajo bajo presión</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Julio 2026 — Agosto 2026</span>
+            <h3>Electrónica, almacén y caja</h3>
+            <span class="timeline-org">Carrefour</span>
+            <p>
+              Reposición, organización y mantenimiento de productos en la sección de electrónica;
+              preparación y organización de palets y mercancía en almacén; cobros, atención al cliente
+              y resolución de consultas en caja.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Organización</span>
+              <span class="tag">Resolución de consultas</span>
+              <span class="tag">Responsabilidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="container">
+      <p class="section-eyebrow reveal">Estudios</p>
+      <h2 class="section-title reveal">Formación académica</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2025 — Actualidad</span>
+            <h3>Grado Superior de Desarrollo de Aplicaciones Web</h3>
+            <span class="timeline-org">IES Severo Ochoa</span>
+            <p>Cursando actualmente el 2º año.</p>
+            <div class="tag-row"><span class="tag tag-live">En curso</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023 — 2025</span>
+            <h3>Grado Medio de Sistemas Microinformáticos y Redes</h3>
+            <span class="timeline-org">IES Severo Ochoa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section alt-bg">
+    <div class="container">
+      <p class="section-eyebrow reveal">Lo que sé hacer</p>
+      <h2 class="section-title reveal">Habilidades</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3l1.5 17L12 22l6.5-2L20 3H4z"/><path d="M8 8h8M8.5 12h7l-.5 6-3 1-3-1-.3-3"/></svg></div>
+          <h3>HTML</h3>
+          <p>Maquetación semántica de páginas web</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3l1.5 17L12 22l6.5-2L20 3H4z"/><path d="M15.5 8h-7l.3 3h6.4l-.4 5-3 1-3-1-.2-2"/></svg></div>
+          <h3>CSS</h3>
+          <p>Diseño visual y adaptación responsive</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
+          <h3>WordPress</h3>
+          <p>Creación y gestión de sitios web</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <h3>WooCommerce</h3>
+          <p>Configuración de tiendas online</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+          <h3>Python</h3>
+          <p>Scripting y automatización básica</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M6 8.5V15.5M8.2 7l7.6 4M8.2 17l7.6-4"/></svg></div>
+          <h3>Git</h3>
+          <p>Control de versiones en equipo</p>
+        </div>
+      </div>
+
+      <p class="section-eyebrow reveal sub-eyebrow">Comunicación</p>
+      <h3 class="subsection-title reveal">Idiomas</h3>
+      <div class="languages">
+        <div class="language-item reveal">
+          <div class="language-head"><span>Castellano</span><span>Nativo</span></div>
+          <div class="language-bar"><div class="language-fill" data-width="100"></div></div>
+        </div>
+        <div class="language-item reveal">
+          <div class="language-head"><span>Inglés</span><span>Certificado B2</span></div>
+          <div class="language-bar"><div class="language-fill" data-width="75"></div></div>
+        </div>
+      </div>
+
+      <p class="section-eyebrow reveal sub-eyebrow">Aptitudes</p>
+      <h3 class="subsection-title reveal">Cualidades personales</h3>
+      <div class="soft-skills reveal">
+        <span class="tag">Constante</span>
+        <span class="tag">Disciplinado</span>
+        <span class="tag">Comprometido</span>
+        <span class="tag">Trabajo en equipo</span>
+        <span class="tag">Atención al cliente</span>
+        <span class="tag">Resolución de problemas</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <p class="section-eyebrow reveal">Contacto</p>
+      <h2 class="section-title reveal">Hablemos de tu próximo proyecto</h2>
+      <p class="section-subtitle reveal">
+        Estoy buscando prácticas y oportunidades para seguir creciendo como desarrollador.
+        Si tienes una propuesta, escríbeme.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a class="contact-card reveal" href="mailto:alvaromolmateo@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <div><strong>Email</strong><span>alvaromolmateo@gmail.com</span></div>
+          </a>
+          <a class="contact-card reveal" href="tel:+34644628812">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><strong>Teléfono</strong><span>644 62 88 12</span></div>
+          </a>
+          <div class="contact-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Ubicación</strong><span>Elche / Alicante</span></div>
+          </div>
+          <a class="contact-card reveal" href="https://github.com/alvaromolmateo-cmd" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.84.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            <div><strong>GitHub</strong><span>alvaromolmateo-cmd</span></div>
+          </a>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-row">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
+          <div class="form-row">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" placeholder="Cuéntame en qué estás pensando..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Enviar mensaje
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <p class="form-hint" id="formHint">Se abrirá tu cliente de correo con el mensaje ya redactado.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <a href="#home" class="logo">AM<span>.</span></a>
+    <p>© <span id="year"></span> Álvaro Molina Mateo. Hecho con HTML, CSS y JavaScript.</p>
+    <button class="icon-btn" id="backToTop" aria-label="Volver arriba">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
