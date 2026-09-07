@@ -7,7 +7,7 @@ He planteado este proyecto como una presentación personal sencilla de explorar 
 ## Qué puedes encontrar
 
 - Mi presentación y accesos directos a formación, experiencia, tecnologías e idiomas.
-- Una sección sobre mí escrita en primera persona, con mis datos de contacto debajo.
+- Una sección sobre mí, con mis datos de contacto debajo.
 - Mi experiencia más relevante y mi formación, diferenciando los estudios en curso de los finalizados.
 - Mis habilidades con HTML, CSS, WordPress y WooCommerce, Java, Python y Git.
 - Mis idiomas, aptitudes y un enlace para descargar mi CV en PDF.
