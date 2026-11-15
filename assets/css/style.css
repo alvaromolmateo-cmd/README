@@ -915,7 +915,11 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
   pointer-events: none;
 }
 .paper-hint .icon { width: 16px; height: 16px; }
-.cv-stage:hover .paper-hint, .cv-stage:focus-visible .paper-hint { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+/* El aviso «Abrir CV» solo aparece al pasar el ratón o al enfocar con teclado */
+.cv-stage:focus-visible .paper-hint { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+@media (hover: hover) and (pointer: fine) {
+  .cv-stage:hover .paper-hint { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
 .paper {
   width: min(380px, 100%);
   aspect-ratio: 1 / 1.414;
@@ -1203,8 +1207,6 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
 @media (hover: none) {
   .timeline-card:hover, .edu-card:hover, .bento-card:hover, .browser:hover, .chip-list li:hover { transform: none; }
   .spotlight::before { display: none; }
-  /* En táctil el aviso de «Abrir CV» se ve siempre */
-  .paper-hint { opacity: 1; top: auto; bottom: 124px; transform: translateX(-50%); }
 }
 
 /* =========================================================
