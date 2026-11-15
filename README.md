@@ -6,19 +6,19 @@ La identidad visual mantiene el rojo sangre y el monograma **ÁM** diseñado en 
 
 ## Qué puedes encontrar
 
-- **Perfil**: una frase que se ilumina palabra a palabra al hacer scroll, cifras clave y mis datos de contacto.
+- **Perfil**: una presentación breve, cifras clave y mis datos de contacto.
 - **Experiencia en informática**: NTT DATA, Hawk Training Center, soporte técnico en una empresa teleoperadora y GlobalCopy, en una línea de tiempo que se rellena al avanzar.
-- **Proyectos personales**: HabitTracker, Gym Tracker y NutriPlan, con capturas reales en tarjetas que se apilan al hacer scroll.
+- **Proyectos personales**: HabitTracker, Gym Tracker y NutriPlan, con capturas reales (en modo oscuro) en tarjetas que se apilan al hacer scroll.
 - **Formación**: Grado Superior DAW (en curso) y Grado Medio SMR (finalizado).
 - **Competencias**: web, programación, herramientas y soporte técnico, además de idiomas y cualidades personales.
-- **CV descargable** en PDF y un formulario que prepara un correo en tu aplicación de email (no envía nada por sí solo ni guarda datos).
+- **CV descargable** en PDF (también se abre en el navegador al pulsar el dibujo de la hoja) y un formulario que prepara un correo en tu aplicación de email (no envía nada por sí solo ni guarda datos).
 
 ## Cómo está hecha
 
 Uso **HTML, CSS y JavaScript**, sin frameworks ni proceso de compilación.
 
 - Modo día y noche que se recuerda entre visitas, aplicado antes de pintar para evitar parpadeos.
-- Animaciones de scroll con un único `requestAnimationFrame`: hero que se aleja, frase iluminada, línea de tiempo, tarjetas apiladas, parallax suave y hoja del CV que se endereza.
+- Animaciones de scroll con un único `requestAnimationFrame`: hero que se aleja, línea de tiempo, tarjetas apiladas, parallax suave y hoja del CV que se endereza.
 - Detalles de escritorio: indicador deslizante en el menú, monograma con inclinación 3D, brillo que sigue al cursor y botones magnéticos.
 - Pensada para portátiles con poca altura y para móvil: menú a pantalla completa, botón flotante para descargar el CV, zonas seguras del iPhone y campos de 16 px para evitar el zoom en iOS.
 - Accesible: enlace para saltar al contenido, foco visible, soporte de movimiento reducido y estilos de impresión.

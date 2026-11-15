@@ -503,31 +503,27 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
 .spotlight:hover::before { opacity: 1; }
 
 /* =========================================================
-   01 · Perfil (statement + facts)
+   01 · Perfil
    ========================================================= */
-.statement { position: relative; height: 210vh; }
-.statement-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100svh;
-  display: flex;
-  align-items: center;
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 32px 72px;
+  align-items: end;
+  margin-bottom: clamp(56px, 7vw, 88px);
 }
-.statement-text {
-  font-family: var(--display);
-  font-size: clamp(1.7rem, 4.4vw, 3.6rem);
-  font-weight: 700;
-  line-height: 1.16;
-  letter-spacing: -.03em;
+.about-head .section-title { margin-bottom: 0; }
+.about-copy { display: flex; flex-direction: column; gap: 18px; padding-bottom: 6px; }
+.about-copy p { font-size: 1.02rem; line-height: 1.75; max-width: 560px; }
+.about-copy .about-lead {
+  font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+  line-height: 1.55;
+  letter-spacing: -.01em;
   color: var(--text);
-  max-width: 1040px;
-  text-wrap: pretty;
+  font-weight: 400;
 }
-.statement-text .word { opacity: var(--o, 1); transition: opacity .25s linear; }
-.statement-text .word.hl { color: var(--accent); }
+.about-lead strong { color: var(--accent); font-weight: 600; }
 
-.about-body { padding-bottom: clamp(88px, 12vw, 140px); }
 .facts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -880,7 +876,46 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
 .cv-section { overflow: hidden; }
 .cv-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; }
 .cv-meta { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin-top: -12px; }
-.cv-stage { perspective: 1400px; display: flex; justify-content: center; }
+.cv-stage {
+  position: relative;
+  perspective: 1400px;
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  /* Margen interno para que la sombra 3D de la hoja no se recorte */
+  padding: 40px 40px 100px;
+  margin: -40px -40px -100px;
+}
+.cv-stage .paper { transition: transform .1s linear, translate .6s var(--ease-out), box-shadow .6s ease; }
+.cv-stage:hover .paper, .cv-stage:focus-visible .paper {
+  translate: 0 -10px;
+  box-shadow: 0 70px 120px -30px rgba(0,0,0,.55), 0 0 0 1px rgba(0,0,0,.04);
+}
+.paper-hint {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: #fff;
+  background: color-mix(in srgb, #1d1214 82%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 30px -12px rgba(0,0,0,.5);
+  opacity: 0;
+  transform: translate(-50%, -40%) scale(.94);
+  transition: opacity .4s ease, transform .5s var(--ease-out);
+  pointer-events: none;
+}
+.paper-hint .icon { width: 16px; height: 16px; }
+.cv-stage:hover .paper-hint, .cv-stage:focus-visible .paper-hint { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 .paper {
   width: min(380px, 100%);
   aspect-ratio: 1 / 1.414;
@@ -1050,6 +1085,7 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
   .cv-grid, .contact-grid, .lang-soft { grid-template-columns: 1fr; }
   .lang-soft { gap: 48px; }
   .cv-grid { gap: 40px; }
+  .about-intro { grid-template-columns: 1fr; align-items: start; }
   .cv-copy { text-align: center; }
   .cv-copy .section-eyebrow { justify-content: center; }
   .cv-copy .section-title, .cv-copy .section-subtitle { margin-inline: auto; }
@@ -1125,8 +1161,6 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
   .hero-visual { width: 220px; }
   .float-card { display: none; }
 
-  .statement { height: 190vh; }
-
   .fact { padding: 28px 16px 24px; }
   .fact:nth-child(odd) { padding-left: 0; }
   .info-list { grid-template-columns: 1fr; gap: 10px; }
@@ -1154,7 +1188,7 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
   .bento-card { padding: 26px; border-radius: 24px; }
   .bento-support .skill-lines { display: block; }
 
-  .paper { width: min(300px, 82%); }
+  .paper { width: min(300px, 82%); box-shadow: 0 30px 60px -24px rgba(0,0,0,.4), 0 0 0 1px rgba(0,0,0,.04); }
   .cv-copy .hero-cta { flex-direction: column; }
   .cv-copy .btn { width: 100%; }
 
@@ -1169,6 +1203,8 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
 @media (hover: none) {
   .timeline-card:hover, .edu-card:hover, .bento-card:hover, .browser:hover, .chip-list li:hover { transform: none; }
   .spotlight::before { display: none; }
+  /* En táctil el aviso de «Abrir CV» se ve siempre */
+  .paper-hint { opacity: 1; top: auto; bottom: 124px; transform: translateX(-50%); }
 }
 
 /* =========================================================
@@ -1179,8 +1215,6 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   .js .reveal, .js .intro, .js .mask > .intro { opacity: 1; transform: none; }
   .type-cursor { display: none; }
-  .statement { height: auto; }
-  .statement-sticky { position: static; height: auto; padding: 120px 0 80px; }
   .hero-inner { transform: none; opacity: 1; }
   .project-card { position: relative; top: auto; transform: none; }
   .browser { translate: none; }
@@ -1195,8 +1229,6 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
 @media print {
   .navbar, .progress-bar, .hero-bg, .scroll-cue, .fab-cv, .contact-form, .marquee, .cv-stage, #backToTop, .float-card { display: none !important; }
   body { background: #fff; color: #000; }
-  .statement { height: auto; }
-  .statement-sticky { position: static; height: auto; }
   .project-card { position: static; box-shadow: none; break-inside: avoid; }
   .reveal, .intro { opacity: 1 !important; transform: none !important; }
 }

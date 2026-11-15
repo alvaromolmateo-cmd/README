@@ -85,17 +85,6 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  /* ---------- Frase del perfil: se ilumina palabra a palabra ---------- */
-  const statement = $('statement');
-  const statementText = $('statementText');
-  let words = [];
-  if (statementText && !reducedMotion) {
-    const highlight = new Set(['equipos,', 'sistemas', 'portátiles.', 'aplicaciones', 'web', 'extremo']);
-    statementText.innerHTML = statementText.textContent.trim().split(/\s+/)
-      .map(w => `<span class="word${highlight.has(w) ? ' hl' : ''}">${w}</span>`).join(' ');
-    words = [...statementText.querySelectorAll('.word')];
-  }
-
   /* ---------- Contadores ---------- */
   const countObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -166,14 +155,6 @@
       const h = heroSection.offsetHeight;
       heroInner.style.setProperty('--hero-p', clamp(y / (h * .85)).toFixed(3));
       heroSection.style.setProperty('--hero-p', clamp(y / (h * .85)).toFixed(3));
-    }
-
-    // Frase del perfil
-    if (statement && words.length) {
-      const r = statement.getBoundingClientRect();
-      const p = clamp((-r.top + vh * .15) / (r.height - vh * .9));
-      const n = words.length;
-      words.forEach((w, i) => w.style.setProperty('--o', (.14 + .86 * clamp(p * n * 1.15 - i)).toFixed(3)));
     }
 
     // Línea de experiencia que se rellena
