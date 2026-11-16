@@ -8,7 +8,7 @@ La identidad visual mantiene el rojo sangre y el monograma **ÁM** diseñado en 
 
 - **Perfil**: una presentación breve, cifras clave y mis datos de contacto.
 - **Experiencia en informática**: NTT DATA, Hawk Training Center, soporte técnico en una empresa teleoperadora y GlobalCopy, en una línea de tiempo que se rellena al avanzar.
-- **Proyectos personales**: HabitTracker, Gym Tracker y NutriPlan, con capturas reales (en modo oscuro) en tarjetas que se apilan al hacer scroll.
+- **Proyectos personales**: HabitTracker, LifeLine, Gym Tracker y NutriPlan, con capturas reales (en modo oscuro) en tarjetas que se apilan al hacer scroll.
 - **Formación**: Grado Superior DAW (en curso) y Grado Medio SMR (finalizado).
 - **Competencias**: web, programación, herramientas y soporte técnico, además de idiomas y cualidades personales.
 - **CV descargable** en PDF (también se abre en el navegador al pulsar el dibujo de la hoja) y un formulario que prepara un correo en tu aplicación de email (no envía nada por sí solo ni guarda datos).
