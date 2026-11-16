@@ -727,6 +727,10 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var
 }
 .browser-view { display: block; aspect-ratio: 16 / 10; overflow: hidden; }
 .browser-view img { width: 100%; }
+/* Cada captura acompaña al tema de la página. */
+.browser-view .shot-dark { display: none; }
+:root[data-theme="dark"] .browser-view .shot-dark { display: block; }
+:root[data-theme="dark"] .browser-view .shot-light { display: none; }
 
 /* =========================================================
    04 · Formación
